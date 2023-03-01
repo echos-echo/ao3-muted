@@ -15,9 +15,10 @@ export default function Home() {
         {/* this is where the title of the site will go */}
         <div className={styles.center}>
           <div className={styles.description}>
-            <p>
-              Some Title
-            </p>
+            <h2>
+              Ao3 Muter
+            </h2>
+            <h5>a CSS generator to mute tags and fics using site skins</h5>
           </div>
         </div>
         {/* this is the site navigation; each one will be a different component */}

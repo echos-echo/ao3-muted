@@ -26,17 +26,17 @@ export const Nav = () => {
         <div>
             <div className={styles.center}>
                 <div className={styles.card} onClick={handleOnClick('muteTag')}>
-                    <p className={styles.description}>
+                    <p className={styles.navigation}>
                     Mute a Tag
                     </p>
                 </div>
                 <div className={styles.card} onClick={handleOnClick('muteFic')}>
-                    <p className={styles.description}>
+                    <p className={styles.navigation}>
                     Mute a Fic
                     </p>
                 </div>
                 <div className={styles.card} onClick={handleOnClick('howTo')}>
-                    <p className={styles.description}>
+                    <p className={styles.navigation}>
                     How to Use
                     </p>
                 </div>
