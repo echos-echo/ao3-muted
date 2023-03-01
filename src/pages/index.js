@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-
+import { Nav } from '@/components/Nav'
 
 export default function Home() {
   return (
@@ -21,27 +21,7 @@ export default function Home() {
           </div>
         </div>
         {/* this is the site navigation; each one will be a different component */}
-        <div className={styles.center}>
-          <div className={styles.card}>
-            <p className={styles.description}>
-              Mute a Tag
-            </p>
-          </div>
-          <div className={styles.card}>
-            <p className={styles.description}>
-              Mute a Fic
-            </p>
-          </div>
-          <div className={styles.card}>
-            <p className={styles.description}>
-              How to Use
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <p>this is where the thingy will go</p>
-        </div>
+        <Nav/>
       </main>
     </>
   )
