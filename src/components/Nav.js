@@ -8,14 +8,17 @@ export const Nav = () => {
     const [tab, setTab] = useState(<HowTo/>);
 
     const handleOnClick = (navTab) => () => {
-        const tabType = navTab;
-        switch(tabType) {
+        console.log(navTab);
+        switch(navTab) {
             case 'muteTag':
                 setTab(<MuteTag/>);
+                break;
             case 'muteFic':
                 setTab(<MuteFic/>);
+                break;
             case 'howTo':
                 setTab(<HowTo/>);
+                break;
         }
     }
 

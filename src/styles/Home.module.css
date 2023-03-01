@@ -15,7 +15,7 @@
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;
-  /* z-index: 2; */
+  z-index: 2;
   font-family: var(--font-mono);
 }
 
@@ -62,15 +62,6 @@
   width: 240px;
   height: 180px;
   z-index: -1;
-}
-
-.center::before,
-.center::after {
-  content: '';
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
 }
 
 /* Enable hover only on non-touch devices */
