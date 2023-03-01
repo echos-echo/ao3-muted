@@ -9,8 +9,14 @@ export const Nav = () => {
 
     const handleOnClick = (navTab) => () => {
         const tabType = navTab;
-        console.dir(tabType);
-        setTab(tabType);
+        switch(tabType) {
+            case 'muteTag':
+                setTab(<MuteTag/>);
+            case 'muteFic':
+                setTab(<MuteFic/>);
+            case 'howTo':
+                setTab(<HowTo/>);
+        }
     }
 
     return (
