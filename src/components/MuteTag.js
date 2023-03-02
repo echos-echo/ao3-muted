@@ -25,6 +25,7 @@ export const MuteTag = () => {
           <form>
             {links.map((link, ind) => <input className={styles.addLink} key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
             <button onClick={addLine}>add another link +</button>
+            <input type="submit"/>
           </form>
         </div>
       </div>
