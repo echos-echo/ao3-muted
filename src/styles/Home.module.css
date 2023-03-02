@@ -84,6 +84,7 @@
 }
 
 .centerHeader {
+  padding: 15px 0px;
   text-align: center;
 }
 
@@ -113,6 +114,27 @@
 .buttons input[type=button]:hover, .buttons input[type=submit]:hover {
   opacity: 1.0;
   border: 2px solid whitesmoke;
+}
+
+.instructions {
+  width: 100%;
+  padding: 2% 15%;
+}
+
+.instructions li {
+  width: 100%;
+  padding: 11px 0px;
+}
+
+.horizontalImages {
+  height: auto;
+  width: 600px;
+  padding: 20px;
+}
+.verticalImages {
+  height: 50%;
+  width: auto;
+  padding: 20px;
 }
 
 .center::before {
