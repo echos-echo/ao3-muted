@@ -69,7 +69,7 @@ export const MuteFic = () => {
           <form onSubmit={handleSubmitForm} className={styles.center}>
             {links.map((link, ind) => <input className={styles.addLink} key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
             <div className={styles.buttons}>
-              <input onClick={addLine} type='button' value='+ add another fic link'/>
+              <input onClick={addLine} type='button' value='+ add fic link'/>
               <input type="submit"/>
             </div>
           </form>
