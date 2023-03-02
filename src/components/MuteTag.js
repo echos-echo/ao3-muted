@@ -26,6 +26,9 @@ export const MuteTag = () => {
    * @returns         string: the formatted CSS to mute the tag
    */
   const getTagSelector = link => {
+    if (link.length < 1) {
+      return `;`
+    }
     let tag = link.slice(link.indexOf('/tags'));
     let cssFormattedTag = `.work.blurb.group:has(a[href^="${tag}"])`;
     return cssFormattedTag;

@@ -26,6 +26,9 @@ export const MuteFic = () => {
    * @returns         string: the formatted CSS to mute the fic
    */
   const getFicID = link => {
+    if (link.length < 1) {
+      return;
+    }
     // scrapes the url from where the work id begins
     let subpages = link.slice(link.indexOf('works/') + 6);
     // checking the end index of the work id in case there are more paths i.e. chapters
@@ -65,8 +68,10 @@ export const MuteFic = () => {
           <h4>paste link(s) for the fic(s) you&apos;d like muted</h4>
           <form onSubmit={handleSubmitForm} className={styles.center}>
             {links.map((link, ind) => <input className={styles.addLink} key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
-            <button onClick={addLine} className={styles.button}>add another link +</button>
-            <input type="submit" className={styles.button}/>
+            <div className={styles.buttons}>
+              <input onClick={addLine} type='button' className={styles.button} value='add another link +'/>
+              <input type="submit" className={styles.button}/>
+            </div>
           </form>
         </div>
         <div>
