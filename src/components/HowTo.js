@@ -32,6 +32,10 @@ export const HowTo = () => {
               below to see if your browser and browser version will allow you to use this muting function.<br/>
               <Image src={compatability} width='' height='' alt='' className={styles.horizontalImages}/>
             </li>
+            <li>
+              If you come across any issues, please feel free to contact me @byulcchi on twitter/instagram,
+              or seren#5876 on discord.
+            </li>
           </ul>
         </div>
         <div className={styles.howToDiv}>
