@@ -38,7 +38,7 @@ export const MuteFic = () => {
   };
 
   const generateListBlockedFics = links => {
-    return links.map(link => getFicID(link)).join(', ') + ` { display: none !important; }`;
+    return links.map(link => getFicID(link)).join(', \n') + ` { display: none !important; }`;
   }
 
   const handleSubmitForm = e => {
@@ -46,18 +46,18 @@ export const MuteFic = () => {
     setFicsCSS(generateListBlockedFics(links));
   }
 
-  // useEffect(() => {
-  //   let text = document.getElementById('mutedFicsCSS').innerHTML;
-  //   const copyContent = async () => {
-  //     try {
-  //       await navigator.clipboard.writeText(text);
-  //       alert('Content copied to clipboard');
-  //     } catch (err) {
-  //       console.error('Failed to copy: ', err);
-  //     }
-  //   }
-  //   copyContent();
-  // }, [ficsCSS]);
+  useEffect(() => {
+    let text = document.getElementById('mutedFicsCSS').innerHTML;
+    const copyContent = async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        alert('Content copied to clipboard');
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    }
+    if (text.length > 0) copyContent();
+  }, [ficsCSS]);
 
   return (
     <div className={styles.center}>
