@@ -46,18 +46,18 @@ export const MuteFic = () => {
     setFicsCSS(generateListBlockedFics(links));
   }
 
-  useEffect(() => {
-    let text = document.getElementById('mutedFicsCSS').innerHTML;
-    const copyContent = async () => {
-      try {
-        await navigator.clipboard.writeText(text);
-        alert('Content copied to clipboard');
-      } catch (err) {
-        console.error('Failed to copy: ', err);
-      }
-    }
-    copyContent();
-  }, [ficsCSS]);
+  // useEffect(() => {
+  //   let text = document.getElementById('mutedFicsCSS').innerHTML;
+  //   const copyContent = async () => {
+  //     try {
+  //       await navigator.clipboard.writeText(text);
+  //       alert('Content copied to clipboard');
+  //     } catch (err) {
+  //       console.error('Failed to copy: ', err);
+  //     }
+  //   }
+  //   copyContent();
+  // }, [ficsCSS]);
 
   return (
     <div className={styles.center}>

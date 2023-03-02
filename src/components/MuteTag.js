@@ -40,18 +40,18 @@ export const MuteTag = () => {
     setTagsCSS(generateListBlockedTags(links));
   }
 
-  useEffect(() => {
-    let text = document.getElementById('mutedTagsCSS').innerHTML;
-    const copyContent = async () => {
-      try {
-        await navigator.clipboard.writeText(text);
-        alert('Content copied to clipboard');
-      } catch (err) {
-        console.error('Failed to copy: ', err);
-      }
-    }
-    copyContent();
-  }, [tagsCSS]);
+  // useEffect(() => {
+  //   let text = document.getElementById('mutedTagsCSS').innerHTML;
+  //   const copyContent = async () => {
+  //     try {
+  //       await navigator.clipboard.writeText(text);
+  //       alert('Content copied to clipboard');
+  //     } catch (err) {
+  //       console.error('Failed to copy: ', err);
+  //     }
+  //   }
+  //   copyContent();
+  // }, [tagsCSS]);
 
   return (
       <div className={styles.center}>
