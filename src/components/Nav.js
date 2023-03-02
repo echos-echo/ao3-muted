@@ -23,7 +23,7 @@ export const Nav = () => {
     }
 
     return (
-        <div>
+        <div className={styles.navWrapper}>
             <div className={styles.centeredNav}>
                 <div className={styles.card} onClick={handleOnClick('muteTag')}>
                     <p className={styles.navigation}>

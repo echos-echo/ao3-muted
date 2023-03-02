@@ -10,7 +10,7 @@ import tagLink from '../../public/images/tagLink.png';
 export const HowTo = () => {
   return (
       <div className={styles.center}>
-        <div>
+        <div className={styles.howToDiv}>
           <h3 className={styles.centerHeader}>Important Things to Note [PLEASE READ!!!]</h3>
           <ul className={styles.instructions}>
             <li>
@@ -34,7 +34,7 @@ export const HowTo = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <div className={styles.howToDiv}>
           <h3 className={styles.centerHeader}>How to Mute Tags/Specific Fics</h3>
           <ul className={styles.instructions}>
             <li>
