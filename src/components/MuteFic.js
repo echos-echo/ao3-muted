@@ -41,7 +41,9 @@ export const MuteFic = () => {
   };
 
   const generateListBlockedFics = links => {
-    return links.map(link => getFicID(link)).join(', \n') + ` { display: none !important; }`;
+    const emptyLinksRemoved = links.filter(link => link !== ``);
+    return emptyLinksRemoved.map(link => getFicID(link))
+    .join(', \n') + ` { display: none !important; }`;
   }
 
   const handleSubmitForm = e => {
@@ -54,9 +56,9 @@ export const MuteFic = () => {
     const copyContent = async () => {
       try {
         await navigator.clipboard.writeText(text);
-        alert('Content copied to clipboard');
+        alert('Generated code copied to clipboard');
       } catch (err) {
-        console.error('Failed to copy: ', err);
+        console.error('Failed to copy!!!', err);
       }
     }
     if (text?.length > 0) copyContent();
@@ -75,7 +77,7 @@ export const MuteFic = () => {
           </form>
         </div>
         {
-          links.every(link => link === '') ? null :
+          (ficsCSS === ``) || links.every(link => link === ``) ? null :
           <div>
             <h4 className={styles.centerHeader}>here is your CSS:</h4>
             <p id="mutedFicsCSS" className={styles.code}>{ficsCSS}</p>

@@ -35,7 +35,9 @@ export const MuteTag = () => {
   }
 
   const generateListBlockedTags = links => {
-    return links.map(link => getTagSelector(link)).join(', \n') + ` { display: none !important; }`;
+    const emptyLinksRemoved = links.filter(link => link !== ``);
+    return emptyLinksRemoved.map(link => getTagSelector(link))
+    .join(', ') + ` { display: none !important; }`;
   }
 
   const handleSubmitForm = e => {
@@ -48,9 +50,9 @@ export const MuteTag = () => {
     const copyContent = async () => {
       try {
         await navigator.clipboard.writeText(text);
-        alert('Content copied to clipboard');
+        alert('Generated code copied to clipboard');
       } catch (err) {
-        console.error('Failed to copy: ', err);
+        console.error('Failed to copy code!', err);
       }
     }
     if (text?.length > 0) copyContent();
@@ -69,7 +71,7 @@ export const MuteTag = () => {
           </form>
         </div>
         {
-          links.every(link => link === '') ? null :
+          (tagsCSS === ``) || links.every(link => link === ``)  ? null :
           <div>
             <h4 className={styles.centerHeader}>here is your CSS:</h4>
             <p id="mutedTagsCSS" className={styles.code}>{tagsCSS}</p>
