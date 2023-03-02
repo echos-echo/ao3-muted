@@ -45,6 +45,11 @@
   font-family: var(--font-mono);
 }
 
+.addLink {
+  display: flex;
+  flex-direction: column;
+}
+
 .card {
   padding: 1.0rem 1.3rem;
   margin: 1.0rem 1.2rem;
