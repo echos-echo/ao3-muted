@@ -50,7 +50,7 @@ export const MuteFic = () => {
   }
 
   useEffect(() => {
-    let text = document.getElementById('mutedFicsCSS').innerHTML;
+    let text = document.getElementById('mutedFicsCSS')?.innerHTML;
     const copyContent = async () => {
       try {
         await navigator.clipboard.writeText(text);
@@ -59,7 +59,7 @@ export const MuteFic = () => {
         console.error('Failed to copy: ', err);
       }
     }
-    if (text.length > 0) copyContent();
+    if (text?.length > 0) copyContent();
   }, [ficsCSS]);
 
   return (
@@ -69,15 +69,18 @@ export const MuteFic = () => {
           <form onSubmit={handleSubmitForm} className={styles.center}>
             {links.map((link, ind) => <input className={styles.addLink} key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
             <div className={styles.buttons}>
-              <input onClick={addLine} type='button' value='add another link +'/>
+              <input onClick={addLine} type='button' value='+ add another fic link'/>
               <input type="submit"/>
             </div>
           </form>
         </div>
-        <div>
-          <h4 className={styles.centerHeader}>here is your CSS:</h4>
-          <p id="mutedFicsCSS" className={styles.code}>{ficsCSS}</p>
-        </div>
+        {
+          links.every(link => link === '') ? null :
+          <div>
+            <h4 className={styles.centerHeader}>here is your CSS:</h4>
+            <p id="mutedFicsCSS" className={styles.code}>{ficsCSS}</p>
+          </div>
+        }
       </div>
   )
 }

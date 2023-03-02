@@ -44,7 +44,7 @@ export const MuteTag = () => {
   }
 
   useEffect(() => {
-    let text = document.getElementById('mutedTagsCSS').innerHTML;
+    let text = document.getElementById('mutedTagsCSS')?.innerHTML;
     const copyContent = async () => {
       try {
         await navigator.clipboard.writeText(text);
@@ -53,7 +53,7 @@ export const MuteTag = () => {
         console.error('Failed to copy: ', err);
       }
     }
-    if (text.length > 0) copyContent();
+    if (text?.length > 0) copyContent();
   }, [tagsCSS]);
 
   return (
@@ -63,15 +63,18 @@ export const MuteTag = () => {
           <form onSubmit={handleSubmitForm} className={styles.center}>
             {links.map((link, ind) => <input className={styles.addLink} key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
             <div className={styles.buttons}>
-              <input onClick={addLine} type='button'value='add another link +'/>
+              <input onClick={addLine} type='button'value='+ add another tag link'/>
               <input type="submit"/>
             </div>
           </form>
         </div>
-        <div>
-          <h4 className={styles.centerHeader}>here is your CSS:</h4>
-          <p id="mutedTagsCSS" className={styles.code}>{tagsCSS}</p>
-        </div>
+        {
+          links.every(link => link === '') ? null :
+          <div>
+            <h4 className={styles.centerHeader}>here is your CSS:</h4>
+            <p id="mutedTagsCSS" className={styles.code}>{tagsCSS}</p>
+          </div>
+        }
       </div>
   )
 }
