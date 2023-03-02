@@ -2,11 +2,23 @@ import React, { useState, useEffect } from "react";
 import styles from '@/styles/Home.module.css'
 
 export const MuteTag = () => {
+  const [links, setLinks] = useState(['']);     // array of links with tags to filter
+  const [tagsCSS, setTagsCSS] = useState(``); // the formatted CSS
 
+  const handleChange = e => {
+    const newLinks = [...links];
+    newLinks[e.target.id] = e.target.value
+    setLinks(newLinks);
+  }
 
   return (
       <div className={styles.center}>
-        <p>this tab is for muting tags!</p>
+        <div>
+          <h4>paste link(s) for the tag(s) you&apos;d like muted</h4>
+          <form>
+            {links.map((link, ind) => <input key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
+          </form>
+        </div>
       </div>
   )
 }
