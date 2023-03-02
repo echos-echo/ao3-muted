@@ -96,8 +96,10 @@
 }
 
 .buttons input[type=button], .buttons input[type=submit] {
-  border: none;
+  border: 0px;
+  border-radius: 6px;
   background-color: rgb(223, 122, 122);
+  opacity: 0.8;
   color: rgb(46, 3, 3);
   cursor: pointer;
   font-size: 14px;
@@ -105,6 +107,12 @@
   margin: 6px;
   padding: 12px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttons input[type=button]:hover, .buttons input[type=submit]:hover {
+  opacity: 1.0;
+  border: 2px solid whitesmoke;
 }
 
 .center::before {
