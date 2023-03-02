@@ -32,7 +32,7 @@ export const MuteTag = () => {
   }
 
   const generateListBlockedTags = links => {
-    return links.map(link => getTagSelector(link)).join(', ') + ` { display: none !important; }`;
+    return links.map(link => getTagSelector(link)).join(', \n') + ` { display: none !important; }`;
   }
 
   const handleSubmitForm = e => {
