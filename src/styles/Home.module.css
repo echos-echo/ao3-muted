@@ -41,11 +41,18 @@
 }
 
 .code {
+  margin: 12px;
+  padding: 7px;
+  border: 3px solid red;
   font-weight: 700;
   font-family: var(--font-mono);
 }
 
 .addLink {
+  font-size: 14px;
+  padding: 8px;
+  margin: 8px;
+  width: 50vw;
   display: flex;
   flex-direction: column;
 }
@@ -61,10 +68,29 @@
 
 .center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 0.8rem 0;
+}
+
+.centeredNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0.8rem 0;
+}
+
+.button {
+  /* line-height: 1.8rem; */
+  font-size: 20px;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  height: 50px;
+  background-color: none;
 }
 
 .center::before {
@@ -92,6 +118,9 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .addLink {
+    width: 85vw;
+  }
   .content {
     padding: 4rem;
   }

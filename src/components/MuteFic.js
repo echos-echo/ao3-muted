@@ -63,15 +63,15 @@ export const MuteFic = () => {
     <div className={styles.center}>
         <div>
           <h4>paste link(s) for the fic(s) you&apos;d like muted</h4>
-          <form onSubmit={handleSubmitForm}>
+          <form onSubmit={handleSubmitForm} className={styles.center}>
             {links.map((link, ind) => <input className={styles.addLink} key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
-            <button onClick={addLine}>add another link +</button>
-            <input type="submit"/>
+            <button onClick={addLine} className={styles.button}>add another link +</button>
+            <input type="submit" className={styles.button}/>
           </form>
         </div>
         <div>
           <h4>here is your CSS:</h4>
-          <p id="mutedFicsCSS">{ficsCSS}</p>
+          <p id="mutedFicsCSS" className={styles.code}>{ficsCSS}</p>
         </div>
       </div>
   )

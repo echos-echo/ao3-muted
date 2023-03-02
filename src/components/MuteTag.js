@@ -65,7 +65,7 @@ export const MuteTag = () => {
         </div>
         <div>
           <h4>here is your CSS:</h4>
-          <p id="mutedTagsCSS">{tagsCSS}</p>
+          <p id="mutedTagsCSS" className={styles.code}>{tagsCSS}</p>
         </div>
       </div>
   )
