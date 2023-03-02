@@ -27,7 +27,7 @@ export const MuteTag = () => {
    */
   const getTagSelector = link => {
     if (link.length < 1) {
-      return `;`
+      return ``;
     }
     let tag = link.slice(link.indexOf('/tags'));
     let cssFormattedTag = `.work.blurb.group:has(a[href^="${tag}"])`;
@@ -59,15 +59,17 @@ export const MuteTag = () => {
   return (
       <div className={styles.center}>
         <div>
-          <h4>paste link(s) for the tag(s) you&apos;d like muted</h4>
-          <form onSubmit={handleSubmitForm}>
+          <h4 className={styles.centerHeader}>paste link(s) for the <i>tag(s)</i> you&apos;d like muted</h4>
+          <form onSubmit={handleSubmitForm} className={styles.center}>
             {links.map((link, ind) => <input className={styles.addLink} key={ind} id={ind} type='text' value={link} onChange={handleChange}/>)}
-            <button onClick={addLine}>add another link +</button>
-            <input type="submit"/>
+            <div className={styles.buttons}>
+              <input onClick={addLine} type='button'value='add another link +'/>
+              <input type="submit"/>
+            </div>
           </form>
         </div>
         <div>
-          <h4>here is your CSS:</h4>
+          <h4 className={styles.centerHeader}>here is your CSS:</h4>
           <p id="mutedTagsCSS" className={styles.code}>{tagsCSS}</p>
         </div>
       </div>

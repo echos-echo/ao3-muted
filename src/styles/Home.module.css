@@ -83,6 +83,10 @@
   padding: 0.8rem 0;
 }
 
+.centerHeader {
+  text-align: center;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
